@@ -1,0 +1,35 @@
+<!--
+  Generated template for the BarPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="dark">
+    <ion-title text-center>bar</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <!--
+  <button ion-button (click)="getMessages()">Get</button>
+  -->
+  <ion-card *ngFor="let message of messageList;let i=index;">
+      <img src="http://jondi.fr/wp-content/uploads/2018/01/dijon-guide-place-de-la-liberation-bc-jondi.jpg"\>
+      <ion-card-content>
+        <ion-card-title>
+            <div [innerHTML]=message.title.rendered></div>
+            Date début: <div [innerHTML]=message.date></div>
+          </ion-card-title>
+          <div [innerHTML]=message.excerpt.rendered></div>
+      </ion-card-content>
+      <button ion-button clear item-end (click)= "showModal(i)">View
+          <ion-icon name="star"></ion-icon>
+      </button>
+    </ion-card>
+
+</ion-content>

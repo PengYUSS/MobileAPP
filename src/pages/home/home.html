@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title text-center>Bouger & Dance</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  
+  <ion-card *ngFor="let message of messageList;let i=index;">
+      <img src="http://jondi.fr/wp-content/uploads/2017/04/attentat-rate-louis-XIV-Dijon.jpg"\>
+      <ion-card-content>
+        <ion-card-title>
+            <div [innerHTML]=message.title.rendered></div>
+            Date début: <div [innerHTML]=message.date></div>
+          </ion-card-title>
+          <div [innerHTML]=message.excerpt.rendered></div>
+        </ion-card-content>
+      <button ion-button clear item-end (click)= "showModal(i)">View
+          <ion-icon name="star"></ion-icon>
+      </button>
+    </ion-card>
+
+</ion-content>
